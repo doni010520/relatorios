@@ -93,6 +93,7 @@
   { "html": "💡 Este relatório faz parte do programa Conexão Cliente para vendas exponenciais, voltado ao desenvolvimento de competências de comunicação consultiva e comportamento de escuta em profissionais de vendas.", "is_list": false },
   { "html": "Instrumento: Listening Styles Profile – Revised (LSP-R)", "is_list": false }
 ]
+{
   "ACAO-TEMPO": [
     { "html": "<strong>Perfil</strong><strong> de </strong><strong>Comunicação</strong><strong> e </strong><strong>Escuta</strong><strong> </strong><strong>em</strong><strong> </strong><strong>Vendas</strong>", "is_list": false },
     { "html": "Treinamento: Conexão cliente para vendas exponenciais \nParticipante: Nome completo", "is_list": false },
@@ -178,7 +179,8 @@
     { "html": "Você tem uma escuta analítica e estruturada, guiada pelo <strong>desejo</strong><strong> </strong><strong>genuíno</strong><strong> de </strong><strong>compreender</strong><strong> com </strong><strong>profundidade</strong>.", "is_list": false },
     { "html": "Sua maneira de ouvir <strong>transmite</strong><strong> </strong><strong>credibilidade</strong> e cuidado, pois demonstra interesse real em entender o interlocutor e a mensagem em seu contexto completo.", "is_list": false },
     { "html": "O desafio está em conciliar <strong>profundidade</strong><strong> com </strong><strong>fluidez</strong> — saber quando aprofundar e quando simplificar.", "is_list": false },
-    { "html": "<strong>Em vendas consultivas</strong>, esse perfil se destaca por <strong>ouvir com atenção e entender com profundidade as necessidades do cliente</strong>, garantindo soluções adequadas e personalizadas.\nAo desenvolver o aspecto <strong>Ação (Processo)</strong>, você aprimora sua capacidade de <strong>responder com agilidade e conduzir o cliente com segurança até a decisão de compra</strong>.", "is_list": false },
+    { "html": "<strong>Em vendas consultivas</strong>, esse perfil se destaca por <strong>ouvir com atenção e entender com profundidade as necessidades do cliente</strong>, garantindo soluções adequadas e personalizadas.", "is_list": false },
+    { "html": "Ao desenvolver o aspecto <strong>Ação (Processo)</strong>, você aprimora sua capacidade de <strong>responder com agilidade e conduzir o cliente com segurança até a decisão de compra</strong>.", "is_list": false },
     { "html": "Quando une precisão e execução, sua escuta se torna completa: <strong>clara, assertiva e orientada a resultados.</strong>", "is_list": false },
     { "html": "<strong>Recomendações práticas</strong>", "is_list": false },
     { "html": "Ao perceber que a conversa exige rapidez, concentre-se em <strong>resumir ideias-chave</strong>.", "is_list": false },
@@ -188,7 +190,9 @@
     { "html": "Busque <strong>adaptar seu tempo de resposta ao do interlocutor</strong>: quanto mais dinâmico ele for, mais objetivo deve ser o seu retorno.", "is_list": false },
     { "html": "💡 Este relatório faz parte do programa Conexão Cliente para vendas exponenciais, voltado ao desenvolvimento de competências de comunicação consultiva e comportamento de escuta em profissionais de vendas.", "is_list": false },
     { "html": "Instrumento: Listening Styles Profile – Revised (LSP-R)", "is_list": false }
-  ],
+  ]
+},
+  {
   "MENSAGEM-PESSOAS": [
     { "html": "<strong>Perfil</strong><strong> de </strong><strong>Comunicação</strong><strong> e </strong><strong>Escuta</strong><strong> </strong><strong>em</strong><strong> </strong><strong>Vendas</strong>", "is_list": false },
     { "html": "Treinamento: Conexão cliente para vendas exponenciais \nParticipante: Nome completo", "is_list": false },
@@ -262,17 +266,19 @@
     { "html": "Corre o risco de perder o foco prático da conversa, desviando do objetivo.", "is_list": false },
     { "html": "Pode hesitar em conduzir o diálogo para ação ou resultado.", "is_list": false },
     { "html": "5. Aspecto menos desenvolvido: Ação (Processo)", "is_list": false },
-    { "html": "Seu menor resultado está na dimensão Ação, que representa a escuta voltada à <strong>execução</strong>, à objetividade e ao encaminhamento prático.", "is_list": true },
-    { "html": "Isso indica que você tende a ouvir com profundidade emocional, mas <strong>nem sempre traduz o diálogo em etapas concretas</strong>.", "is_list": true },
-    { "html": "O desafio está em <strong>conectar empatia com direcionamento</strong>, garantindo que as conversas também resultem em decisões e avanços.", "is_list": true },
+    { "html": "Seu menor resultado está na dimensão Ação, que representa a escuta voltada à <strong>execução</strong>, à objetividade e ao encaminhamento prático.", "is_list": false },
+    { "html": "Isso indica que você tende a ouvir com profundidade emocional, mas <strong>nem sempre traduz o diálogo em etapas concretas</strong>.", "is_list": false },
+    { "html": "O desafio está em <strong>conectar empatia com direcionamento</strong>, garantindo que as conversas também resultem em decisões e avanços.", "is_list": false },
     { "html": "<strong>O que desenvolver:</strong>", "is_list": false },
     { "html": "Após ouvir, pergunte: <strong>“O que podemos fazer a partir disso?”</strong>", "is_list": true },
     { "html": "Pratique resumir a conversa em <strong>pontos de ação</strong> ao final.", "is_list": true },
     { "html": "Defina <strong>responsabilidades e prazos</strong> com clareza.", "is_list": true },
     { "html": "Busque <strong>equilíbrio entre acolher e agir</strong> — empatia e movimento podem coexistir.", "is_list": true },
     { "html": "<strong>Síntese geral</strong>", "is_list": false },
-    { "html": "Você possui uma escuta profundamente humana e empática, voltada à <strong>compreensão</strong><strong> das </strong><strong>pessoas</strong> e ao fortalecimento das relações.\nEssa qualidade faz com que as <strong>pessoas</strong><strong> </strong><strong>confiem</strong><strong> </strong><strong>em</strong><strong> </strong><strong>você</strong> e compartilhem informações importantes — um ativo valioso em ambientes de atendimento, vendas e liderança.", "is_list": false },
-    { "html": "O desafio está em <strong>traduzir essa escuta sensível em ações concretas</strong>.\n<strong>Em </strong><strong>vendas</strong><strong> </strong><strong>consultivas</strong>, esse perfil se destaca por <strong>gerar</strong><strong> </strong><strong>confiança</strong><strong> e </strong><strong>conexão</strong><strong> com o </strong><strong>cliente</strong>, criando um ambiente seguro para o diálogo e a tomada de decisão.\nAo desenvolver a dimensão <strong>Ação</strong><strong> (</strong><strong>Processo</strong><strong>)</strong>, você amplia sua capacidade de <strong>conduzir</strong><strong> o </strong><strong>cliente</strong><strong> </strong><strong>até</strong><strong> o </strong><strong>fechamento</strong>, mantendo o vínculo e o foco em resultado.", "is_list": false },
+    { "html": "Você possui uma escuta profundamente humana e empática, voltada à <strong>compreensão</strong><strong> das </strong><strong>pessoas</strong> e ao fortalecimento das relações.", "is_list": false },
+    { "html": "Essa qualidade faz com que as <strong>pessoas</strong><strong> </strong><strong>confiem</strong><strong> </strong><strong>em</strong><strong> </strong><strong>você</strong> e compartilhem informações importantes — um ativo valioso em ambientes de atendimento, vendas e liderança.", "is_list": false },
+    { "html": "O desafio está em <strong>traduzir essa escuta sensível em ações concretas</strong>.", "is_list": false },
+    { "html": "<strong>Em </strong><strong>vendas</strong><strong> </strong><strong>consultivas</strong>, esse perfil se destaca por <strong>gerar</strong><strong> </strong><strong>confiança</strong><strong> e </strong><strong>conexão</strong><strong> com o </strong><strong>cliente</strong>, criando um ambiente seguro para o diálogo e a tomada de decisão.\nAo desenvolver a dimensão <strong>Ação</strong><strong> (</strong><strong>Processo</strong><strong>)</strong>, você amplia sua capacidade de <strong>conduzir</strong><strong> o </strong><strong>cliente</strong><strong> </strong><strong>até</strong><strong> o </strong><strong>fechamento</strong>, mantendo o vínculo e o foco em resultado.", "is_list": false },
     { "html": "Quando une empatia e execução, sua escuta se torna completa: <strong>acolhedora, produtiva e orientada a resultados.</strong>", "is_list": false },
     { "html": "<strong>Recomendações práticas</strong>", "is_list": false },
     { "html": "Mantenha o tom empático, mas <strong>conclua cada conversa com um próximo passo definido</strong>.", "is_list": false },
@@ -329,7 +335,9 @@
     { "html": "Busque equilíbrio entre <strong>acolher e confirmar</strong> — ouvir com o coração e validar com a mente.", "is_list": false },
     { "html": "💡 Este relatório faz parte do programa Conexão Cliente para vendas exponenciais, voltado ao desenvolvimento de competências de comunicação consultiva e comportamento de escuta em profissionais de vendas.", "is_list": false },
     { "html": "Instrumento: Listening Styles Profile – Revised (LSP-R)", "is_list": false }
-  ],
+  ]
+},
+ {
   "PESSOAS-TEMPO": [
     { "html": "<strong>Perfil</strong><strong> de </strong><strong>Comunicação</strong><strong> e </strong><strong>Escuta</strong><strong> </strong><strong>em</strong><strong> </strong><strong>Vendas</strong>", "is_list": false },
     { "html": "Treinamento: Conexão cliente para vendas exponenciais \nParticipante: Nome completo", "is_list": false },
@@ -385,7 +393,7 @@
     { "html": "Estilo predominante: Orientado para Tempo (Solução imediata)", "is_list": false },
     { "html": "Estilo menos desenvolvido: Orientado para Ação (Processos)", "is_list": false },
     { "html": "2. Descrição dos estilos de escuta", "is_list": false },
-    { "html": "Orientado para Pessoas – Valoriza o vínculo e a empatia. Escuta com atenção às emoções e constrói confiança pela proximidade.\n\nOrientado para Ação – Prefere conversas diretas, voltadas à solução e ao resultado. Gosta de foco e clareza, mas pode soar apressado.\n\nOrientado paraTempo – Preza pela objetividade e pelo respeito ao ritmo da conversa. Evita desvios e busca eficiência.\n\nOrientado para Mensagem – Escuta para compreender o sentido exato do que está sendo dito. Avalia argumentos, identifica contradições e busca precisão na comunicação.", "is_list": false },
+    { "html": "Orientado para Pessoas – Valoriza o vínculo e a empatia. Escuta com atenção às emoções e constrói confiança pela proximidade.\n\nOrientado para Ação – Prefere conversas diretas, voltadas à solution e ao resultado. Gosta de foco e clareza, mas pode soar apressado.\n\nOrientado paraTempo – Preza pela objetividade e pelo respeito ao ritmo da conversa. Evita desvios e busca eficiência.\n\nOrientado para Mensagem – Escuta para compreender o sentido exato do que está sendo dito. Avalia argumentos, identifica contradições e busca precisão na comunicação.", "is_list": false },
     { "html": "3. Perfil dominante – Escuta orientada para Tempo (Solução imediata)", "is_list": false },
     { "html": "Você demonstra uma escuta voltada à eficiência, clareza e resultados rápidos.", "is_list": false },
     { "html": "Seu foco está em identificar o essencial da conversa e resolver o assunto com agilidade, evitando prolongamentos desnecessários.", "is_list": false },
