@@ -17,51 +17,44 @@ const mapaTitulos = {
   "MENSAGEM": "Orientado para Mensagem (Conteúdo/Analítico)"
 };
 
-function montarTextoComNegritos(runs) {
-  let html = "";
-  for (const run of runs) {
-    const texto = run.text;
-    if (run.bold) {
-      html += `<strong>${texto}</strong>`;
-    } else {
-      html += texto;
-    }
-  }
-  return html;
-}
-
+/**
+ * FUNÇÃO CORRIGIDA
+ * Esta função agora lê o `item.html` (que já contém os negritos)
+ * e aplica o estilo de TÍTULO (fonte 12px, margem) ou PARÁGRAFO (fonte 11px, justificado).
+ */
 function buildConteudoHTML(conteudo) {
   let html = "";
   let dentroLista = false;
   
+  // Começa no 7 para pular os cabeçalhos fixos (Título, Participante, 1. Resultado, 2. Descrição)
   for (let i = 7; i < conteudo.length; i++) {
     const item = conteudo[i];
-    const texto = item.text;
-    const runs = item.runs || [];
+    const textoHTML = item.html;
     const isList = item.is_list;
-    
+
     if (dentroLista && !isList) {
       html += '</ul>';
       dentroLista = false;
     }
-    
-    const textoComNegritos = montarTextoComNegritos(runs);
-    
-    // Títulos principais (numerados)
-    if (texto.match(/^\d+\./)) {
-      html += `<p style="margin: 15px 0 8px 0; font-size: 12px; color: #000000;">${textoComNegritos}</p>`;
+
+    // Regra de Título: 
+    // Se o HTML começa com número (ex: "3. ...")
+    // OU se o HTML é *apenas* um texto em negrito (ex: "<strong>Síntese geral</strong>")
+    // Isso aplica o estilo de título (maior e com mais margem).
+    if (textoHTML.match(/^\d+\./) || textoHTML.match(/^<strong>\d+\./) || textoHTML.match(/^<strong>.*<\/strong>$/)) {
+      html += `<p style="margin: 15px 0 8px 0; font-size: 12px; color: #000000;">${textoHTML}</p>`;
     }
-    // Itens de lista com bullets
+    // Regra de Lista:
     else if (isList) {
       if (!dentroLista) {
         html += '<ul style="margin: 5px 0 10px 20px; padding-left: 20px; font-size: 11px; color: #000000; line-height: 1.6;">';
         dentroLista = true;
       }
-      html += `<li style="margin: 5px 0;">${textoComNegritos}</li>`;
+      html += `<li style="margin: 5px 0;">${textoHTML}</li>`;
     }
-    // Texto normal (com negritos conforme original)
+    // Regra de Parágrafo (Padrão):
     else {
-      html += `<p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">${textoComNegritos}</p>`;
+      html += `<p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">${textoHTML}</p>`;
     }
   }
   
@@ -198,7 +191,8 @@ app.post('/gerar', async (req, res) => {
       return res.status(404).json({ error: 'Relatório não encontrado' });
     }
     
-    const conteudoRelatorio = buildConteudoHTML(relatorio.conteudo);
+    // A chave da correção está aqui, na nova lógica da buildConteudoHTML
+    const conteudoRelatorio = buildConteudoHTML(relatorio);
     const emailHTML = buildEmailHTML(data, conteudoRelatorio);
     
     const browser = await puppeteer.launch({
