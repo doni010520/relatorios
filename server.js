@@ -17,6 +17,19 @@ const mapaTitulos = {
   "MENSAGEM": "Orientado para Mensagem (Conteúdo/Analítico)"
 };
 
+function montarTextoComNegritos(runs) {
+  let html = "";
+  for (const run of runs) {
+    const texto = run.text;
+    if (run.bold) {
+      html += `<strong>${texto}</strong>`;
+    } else {
+      html += texto;
+    }
+  }
+  return html;
+}
+
 function buildConteudoHTML(conteudo) {
   let html = "";
   let dentroLista = false;
@@ -24,41 +37,34 @@ function buildConteudoHTML(conteudo) {
   for (let i = 7; i < conteudo.length; i++) {
     const item = conteudo[i];
     const texto = item.text;
-    const bold = item.bold;
+    const runs = item.runs || [];
     const isList = item.is_list;
-    const style = item.style || '';
     
-    // Fechar lista se necessário
     if (dentroLista && !isList) {
       html += '</ul>';
       dentroLista = false;
     }
     
-    // Títulos (Heading 2 ou números)
-    if (style === 'Heading 2' || texto.match(/^\d+\./)) {
-      html += `<p style="margin: 15px 0 8px 0; font-size: 12px; color: #000000;"><strong>${texto}</strong></p>`;
+    const textoComNegritos = montarTextoComNegritos(runs);
+    
+    // Títulos principais (numerados)
+    if (texto.match(/^\d+\./)) {
+      html += `<p style="margin: 15px 0 8px 0; font-size: 12px; color: #000000;">${textoComNegritos}</p>`;
     }
-    // Subtítulos em negrito
-    else if (bold && texto.match(/^[A-ZÇÃÕÁÉÍÓÚ\s\-–():]+$/) && texto.length < 100) {
-      html += `<p style="margin: 12px 0 8px 0; font-size: 11px; color: #000000;"><strong>${texto}</strong></p>`;
-    }
-    // Itens de lista (bullets)
+    // Itens de lista com bullets
     else if (isList) {
       if (!dentroLista) {
         html += '<ul style="margin: 5px 0 10px 20px; padding-left: 20px; font-size: 11px; color: #000000; line-height: 1.6;">';
         dentroLista = true;
       }
-      const textoItem = bold ? `<strong>${texto}</strong>` : texto;
-      html += `<li style="margin: 5px 0;">${textoItem}</li>`;
+      html += `<li style="margin: 5px 0;">${textoComNegritos}</li>`;
     }
-    // Texto normal (com ou sem negrito)
+    // Texto normal (com negritos conforme original)
     else {
-      const textoFinal = bold ? `<strong>${texto}</strong>` : texto;
-      html += `<p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">${textoFinal}</p>`;
+      html += `<p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">${textoComNegritos}</p>`;
     }
   }
   
-  // Fechar lista se ainda estiver aberta
   if (dentroLista) {
     html += '</ul>';
   }
@@ -110,26 +116,26 @@ function buildEmailHTML(data, conteudoRelatorio) {
                             <p style="margin: 0 0 8px 0; font-size: 12px; color: #000000;">
                                 <strong>1. Resultado geral</strong>
                             </p>
-                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0 0 8px 20px; font-size: 11px;">
+                            <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 0 8px 20px; font-size: 11px; border-collapse: collapse;">
                                 <tr>
-                                    <td style="padding: 1px 0; width: 60%;">Estilo de escuta</td>
-                                    <td style="padding: 1px 0; text-align: right; color: #17a2b8;"><strong>Pontuação</strong></td>
+                                    <td style="padding: 0; margin: 0;">Estilo de escuta</td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>Pontuação</strong></td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 1px 0;">Pessoas (Relacional)</td>
-                                    <td style="padding: 1px 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.PESSOAS}</strong></td>
+                                    <td style="padding: 0; margin: 0;">Pessoas (Relacional)</td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.PESSOAS}</strong></td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 1px 0;">Ação (Processo)</td>
-                                    <td style="padding: 1px 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.ACAO}</strong></td>
+                                    <td style="padding: 0; margin: 0;">Ação (Processo)</td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.ACAO}</strong></td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 1px 0;">Tempo (Solução imediata)</td>
-                                    <td style="padding: 1px 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.TEMPO}</strong></td>
+                                    <td style="padding: 0; margin: 0;">Tempo (Solução imediata)</td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.TEMPO}</strong></td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 1px 0;">Mensagem (Conteúdo / Analítico)</td>
-                                    <td style="padding: 1px 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.MENSAGEM}</strong></td>
+                                    <td style="padding: 0; margin: 0;">Mensagem (Conteúdo / Analítico)</td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.MENSAGEM}</strong></td>
                                 </tr>
                             </table>
                             <p style="margin: 8px 0 8px 0; font-size: 11px; color: #000000; line-height: 1.5;">
