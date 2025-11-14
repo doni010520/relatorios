@@ -525,8 +525,7 @@
     { "html": "Use o <strong>silêncio</strong> como ferramenta para dar espaço ao outro.", "is_list": true },
     { "html": "💡 Este relatório faz parte do programa Conexão Cliente para vendas exponenciais, voltado ao desenvolvimento de competências de comunicação consultiva e comportamento de escuta em profissionais de vendas.", "is_list": false },
     { "html": "Instrumento: Listening Styles Profile – Revised (LSP-R)", "is_list": false }
-  ]
-  {
+  ],
   "MENSAGEM-TEMPO": [
     { "html": "<strong>Perfil de Comunicação e Escuta em Vendas</strong>", "is_list": false },
     { "html": "Treinamento: Conexão cliente para vendas exponenciais \nParticipante: Nome completo", "is_list": false },
@@ -576,5 +575,4 @@
     { "html": "💡 Este relatório faz parte do programa Conexão Cliente para vendas exponenciais, voltado ao desenvolvimento de competências de comunicação consultiva e comportamento de escuta em profissionais de vendas.", "is_list": false },
     { "html": "Instrumento: Listening Styles Profile – Revised (LSP-R)", "is_list": false }
   ]
-}
 }
