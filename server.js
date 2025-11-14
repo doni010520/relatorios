@@ -10,6 +10,9 @@ app.use(express.json());
 
 const relatorios = JSON.parse(fs.readFileSync(path.join(__dirname, 'relatorios.json'), 'utf8'));
 
+// Carregar logo em Base64
+const logoBase64 = fs.readFileSync(path.join(__dirname, 'logo.png'), 'base64');
+
 const mapaTitulos = {
   "PESSOAS": "Orientado para Pessoas (Relacional)",
   "ACAO": "Orientado para Ação (Processo)",
@@ -79,7 +82,12 @@ function buildEmailHTML(data, conteudoRelatorio) {
             <td align="center" style="padding: 20px;">
                 <table width="700" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
                     <tr>
-                        <td style="padding: 30px 40px 5px 40px; text-align: center;">
+                        <td style="padding: 20px 40px 10px 40px;">
+                            <img src="data:image/png;base64,${logoBase64}" alt="Logo" style="width: 80px; height: auto;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 40px 5px 40px; text-align: center;">
                             <h1 style="margin: 0; font-size: 16px; font-weight: bold; color: #000000;">
                                 Perfil de Comunicação e Escuta em Vendas
                             </h1>
@@ -95,7 +103,7 @@ function buildEmailHTML(data, conteudoRelatorio) {
                     <tr>
                         <td style="padding: 0 40px 30px 40px; text-align: center;">
                             <p style="margin: 0; font-size: 12px; color: #000000;">
-                                Participante: <span style="background-color: #17a2b8; color: #ffffff; padding: 2px 8px;">${data.nome}</span>
+                                Participante: <strong>${data.nome}</strong>
                             </p>
                         </td>
                     </tr>
@@ -112,23 +120,23 @@ function buildEmailHTML(data, conteudoRelatorio) {
                             <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 0 8px 20px; font-size: 11px; border-collapse: collapse;">
                                 <tr>
                                     <td style="padding: 0; margin: 0;">Estilo de escuta</td>
-                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>Pontuação</strong></td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: center;"><strong>Pontuação</strong></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 0; margin: 0;">Pessoas (Relacional)</td>
-                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.PESSOAS}</strong></td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: center;"><strong>${data.pontuacoes.PESSOAS}/42</strong></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 0; margin: 0;">Ação (Processo)</td>
-                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.ACAO}</strong></td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: center;"><strong>${data.pontuacoes.ACAO}/42</strong></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 0; margin: 0;">Tempo (Solução imediata)</td>
-                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.TEMPO}</strong></td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: center;"><strong>${data.pontuacoes.TEMPO}/42</strong></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 0; margin: 0;">Mensagem (Conteúdo / Analítico)</td>
-                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: right; color: #17a2b8;"><strong>${data.pontuacoes.MENSAGEM}</strong></td>
+                                    <td style="padding: 0 0 0 50px; margin: 0; text-align: center;"><strong>${data.pontuacoes.MENSAGEM}/42</strong></td>
                                 </tr>
                             </table>
                             <p style="margin: 8px 0 8px 0; font-size: 11px; color: #000000; line-height: 1.5;">
