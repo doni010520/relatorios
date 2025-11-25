@@ -88,7 +88,7 @@ function buildEmailHTML(data, conteudoRelatorio) {
                 <table width="700" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
                     <tr>
                         <td style="padding: 20px 40px 10px 40px;">
-                            <img src="data:image/png;base64,${logoBase64}" alt="Logo" style="width: 80px; height: auto;">
+                            <img src="data:image/png;base64,${logoBase64}" alt="Logo" style="width: 140px; height: auto;">
                         </td>
                     </tr>
                     <tr>
