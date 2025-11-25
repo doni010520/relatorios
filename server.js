@@ -84,10 +84,10 @@ function buildEmailHTML(data, conteudoRelatorio) {
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #ffffff;">
     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
         <tr>
-            <td align="center" style="padding: 20px;">
+            <td align="center" style="padding: 10px;">
                 <table width="700" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
                     <tr>
-                        <td style="padding: 20px 40px 10px 40px;">
+                        <td style="padding: 10px 40px 5px 40px;">
                             <img src="data:image/png;base64,${logoBase64}" alt="Logo" style="width: 140px; height: auto;">
                         </td>
                     </tr>
@@ -205,7 +205,7 @@ app.post('/gerar', async (req, res) => {
     const pdfBuffer = await page.pdf({
       format: 'A4',
       printBackground: true,
-      margin: { top: '40px', right: '60px', bottom: '40px', left: '60px' }
+      margin: { top: '20px', right: '60px', bottom: '40px', left: '60px' }
     });
     
     await browser.close();
