@@ -24,6 +24,7 @@ const mapaTitulos = {
  * FUNÇÃO CORRIGIDA
  * Esta função agora lê o `item.html` (que já contém os negritos)
  * e aplica o estilo de TÍTULO (fonte 12px, margem) ou PARÁGRAFO (fonte 11px, justificado).
+ * Também adiciona quebra de página antes do item 5.
  */
 function buildConteudoHTML(conteudo) {
   let html = "";
@@ -40,12 +41,16 @@ function buildConteudoHTML(conteudo) {
       dentroLista = false;
     }
 
+    // NOVO: Detecta se é o item 5 para adicionar quebra de página
+    const ehItem5 = textoHTML.includes("5. Aspecto menos desenvolvido");
+    const pageBreakStyle = ehItem5 ? "page-break-before: always;" : "";
+
     // Regra de Título: 
     // Se o HTML começa com número (ex: "3. ...")
     // OU se o HTML é *apenas* um texto em negrito (ex: "<strong>Síntese geral</strong>")
     // Isso aplica o estilo de título (maior e com mais margem).
     if (textoHTML.match(/^\d+\./) || textoHTML.match(/^<strong>\d+\./) || textoHTML.match(/^<strong>.*<\/strong>$/)) {
-      html += `<p style="margin: 15px 0 8px 0; font-size: 12px; color: #000000;">${textoHTML}</p>`;
+      html += `<p style="margin: 15px 0 8px 0; font-size: 12px; color: #000000; ${pageBreakStyle}">${textoHTML}</p>`;
     }
     // Regra de Lista:
     else if (isList) {
