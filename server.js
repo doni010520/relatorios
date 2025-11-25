@@ -21,6 +21,90 @@ const mapaTitulos = {
 };
 
 /**
+ * FUNÇÃO PARA GERAR A CAPA DO RELATÓRIO
+ * Gera o HTML das duas páginas iniciais de apresentação
+ */
+function buildCapaHTML() {
+  return `
+    <!-- PÁGINA 1 DA CAPA -->
+    <div style="padding: 0 40px;">
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6;">
+        Olá!
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        Antes de qualquer coisa, <strong>parabéns por dedicar um tempo para se conhecer melhor.</strong>
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        O relatório que você está prestes a ler é o resultado do seu <strong>Teste de Perfil de Escuta</strong>, uma ferramenta que faz parte do programa <strong>Conexão Cliente</strong> — criada para ajudar você a compreender <strong>como se comunica, como se conecta e como transforma conversas em resultados</strong>.
+      </p>
+      
+      <p style="margin: 20px 0 8px 0; font-size: 12px; color: #000000;">
+        <strong>Por que este teste é importante</strong>
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        Escutar é muito mais do que ouvir palavras.<br>
+        É perceber intenções, sentimentos, pausas e significados não ditos.
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        Ao compreender o seu estilo de escuta, você ganha clareza sobre <strong>como se relaciona, toma decisões e influencia pessoas</strong> — dentro e fora do ambiente de trabalho.<br>
+        Esse autoconhecimento é o primeiro passo para aprimorar <strong>a comunicação, a empatia e a produtividade</strong>, fortalecendo tanto os <strong>resultados comerciais</strong> quanto as <strong>relações humanas</strong>.
+      </p>
+      
+      <p style="margin: 20px 0 8px 0; font-size: 12px; color: #000000;">
+        <strong>Como ler este relatório</strong>
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6;">
+        Aqui você vai encontrar:
+      </p>
+      <ul style="margin: 5px 0 10px 20px; padding-left: 20px; font-size: 11px; color: #000000; line-height: 1.6;">
+        <li style="margin: 5px 0;"><strong>Seu estilo predominante de escuta</strong> — que revela como você tende a se posicionar em uma conversa.</li>
+        <li style="margin: 5px 0;"><strong>O aspecto menos desenvolvido</strong> — que mostra uma área em que é possível crescer para alcançar mais equilíbrio comunicativo.</li>
+        <li style="margin: 5px 0;"><strong>Uma síntese geral</strong> — com uma leitura integrada sobre como o seu estilo impacta suas interações e resultados.</li>
+        <li style="margin: 5px 0;"><strong>Recomendações práticas</strong> — sugestões simples para aplicar no dia a dia e aprimorar sua escuta de forma natural e consciente.</li>
+      </ul>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        Não existe certo ou errado.<br>
+        Cada estilo tem forças e desafios próprios, e todos são essenciais.<br>
+        O mais importante é <strong>aprender a adaptar sua escuta conforme o perfil e o momento do interlocutor</strong>, especialmente quando esse interlocutor é o cliente.
+      </p>
+    </div>
+    
+    <!-- QUEBRA DE PÁGINA -->
+    <div style="page-break-before: always;"></div>
+    
+    <!-- PÁGINA 2 DA CAPA -->
+    <div style="padding: 0 40px;">
+      <p style="margin: 20px 0 8px 0; font-size: 12px; color: #000000;">
+        <strong>Um convite ao autodesenvolvimento</strong>
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        Use este relatório como uma <strong>ferramenta de aprimoramento profissional e pessoal</strong>.<br>
+        Ele oferece uma visão clara sobre <strong>como o seu estilo de escuta influencia a qualidade das conversas, a tomada de decisão e os resultados que você gera.</strong>
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        E se você ainda não está inscrito no <strong>curso Conexão Cliente</strong>, aproveite esta oportunidade.<br>
+        No curso, você vai aprender <strong>a identificar o perfil de escuta do cliente</strong> e ajustar sua abordagem de forma consultiva, aumentando <strong>a confiança, o engajamento e a taxa de fechamento de vendas</strong>.
+      </p>
+      <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6; text-align: justify;">
+        Ao compreender seus padrões de escuta e ampliar sua percepção na comunicação com o cliente,<br>
+        você passa a conduzir interações com mais estratégia, gerar conexões mais eficazes e alcançar resultados sustentáveis.
+      </p>
+      
+      <p style="margin: 20px 0 8px 0; font-size: 12px; color: #000000;">
+        <strong>Inscreva-se agora</strong>
+      </p>
+      <p style="margin: 0 0 5px 0; font-size: 11px; color: #000000; line-height: 1.6;">
+        <strong>Conexão Cliente</strong><br>
+        <em>Ouvir é o que transforma comunicação em resultado.</em>
+      </p>
+    </div>
+    
+    <!-- QUEBRA DE PÁGINA PARA O RELATÓRIO -->
+    <div style="page-break-before: always;"></div>
+  `;
+}
+
+/**
  * FUNÇÃO CORRIGIDA
  * Esta função agora lê o `item.html` (que já contém os negritos)
  * e aplica o estilo de TÍTULO (fonte 12px, margem) ou PARÁGRAFO (fonte 11px, justificado).
@@ -74,6 +158,8 @@ function buildConteudoHTML(conteudo) {
 }
 
 function buildEmailHTML(data, conteudoRelatorio) {
+  const capaHTML = buildCapaHTML();
+  
   return `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -117,6 +203,15 @@ function buildEmailHTML(data, conteudoRelatorio) {
                             <hr style="border: none; border-top: 1px solid #cccccc; margin: 0;">
                         </td>
                     </tr>
+                    
+                    <!-- CAPA DO RELATÓRIO -->
+                    <tr>
+                        <td style="padding: 20px 0;">
+                            ${capaHTML}
+                        </td>
+                    </tr>
+                    
+                    <!-- CONTEÚDO DO RELATÓRIO -->
                     <tr>
                         <td style="padding: 20px 40px;">
                             <p style="margin: 0 0 8px 0; font-size: 12px; color: #000000;">
