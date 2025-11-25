@@ -172,20 +172,7 @@ function buildEmailHTML(data, conteudoRelatorio) {
                         <td style="padding: 20px 40px 0 40px;">
                             <hr style="border: none; border-top: 1px solid #cccccc; margin: 0;">
                         </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 15px 40px 30px 40px; text-align: center;">
-                            <p style="margin: 0 0 5px 0; font-size: 10px; color: #666666;">
-                                <strong>Programa Conexão Cliente</strong>
-                            </p>
-                            <p style="margin: 0 0 5px 0; font-size: 9px; color: #999999;">
-                                Desenvolvendo comunicação e escuta ativa para vendas exponenciais
-                            </p>
-                            <p style="margin: 0; font-size: 8px; color: #999999;">
-                                Baseado no LSP-R (Listening Styles Profile - Revised) de Bodie et al., 2013
-                            </p>
-                        </td>
-                    </tr>
+                    </tr>                
                 </table>
             </td>
         </tr>
