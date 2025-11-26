@@ -91,11 +91,6 @@ function buildEmailHTML(data, conteudoRelatorio) {
                     <!-- CAPA - PÁGINA 1      -->
                     <!-- ==================== -->
                     <tr>
-                        <td style="padding: 10px 40px 5px 40px;">
-                            <img src="data:image/png;base64,${logoBase64}" alt="Logo" style="width: 140px; height: auto;">
-                        </td>
-                    </tr>
-                    <tr>
                         <td style="padding: 20px 40px;">
                             <p style="margin: 0 0 10px 0; font-size: 11px; color: #000000; line-height: 1.6;">
                                 Olá!
@@ -174,12 +169,7 @@ function buildEmailHTML(data, conteudoRelatorio) {
                     <!-- RELATÓRIO - PÁGINA 3 -->
                     <!-- ==================== -->
                     <tr>
-                        <td style="padding: 10px 40px 5px 40px; page-break-before: always;">
-                            <img src="data:image/png;base64,${logoBase64}" alt="Logo" style="width: 140px; height: auto;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px 40px 5px 40px; text-align: center;">
+                        <td style="padding: 10px 40px 5px 40px; page-break-before: always; text-align: center;">
                             <h1 style="margin: 0; font-size: 16px; font-weight: bold; color: #000000;">
                                 Perfil de Comunicação e Escuta em Vendas
                             </h1>
@@ -292,7 +282,14 @@ app.post('/gerar', async (req, res) => {
     const pdfBuffer = await page.pdf({
       format: 'A4',
       printBackground: true,
-      margin: { top: '20px', right: '60px', bottom: '40px', left: '60px' }
+      displayHeaderFooter: true,
+      headerTemplate: `
+        <div style="width: 100%; padding: 10px 60px;">
+          <img src="data:image/png;base64,${logoBase64}" style="width: 100px; height: auto;">
+        </div>
+      `,
+      footerTemplate: '<div></div>',
+      margin: { top: '80px', right: '60px', bottom: '40px', left: '60px' }
     });
     
     await browser.close();
