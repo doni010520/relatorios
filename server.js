@@ -284,12 +284,15 @@ app.post('/gerar', async (req, res) => {
       printBackground: true,
       displayHeaderFooter: true,
       headerTemplate: `
-        <div style="width: 100%; padding: 10px 60px;">
+        <style>
+          .header { font-size: 10px; width: 100%; padding: 10px 40px; }
+        </style>
+        <div class="header">
           <img src="data:image/png;base64,${logoBase64}" style="width: 100px; height: auto;">
         </div>
       `,
-      footerTemplate: '<div></div>',
-      margin: { top: '80px', right: '60px', bottom: '40px', left: '60px' }
+      footerTemplate: '<div style="font-size: 10px;"></div>',
+      margin: { top: '100px', right: '60px', bottom: '40px', left: '60px' }
     });
     
     await browser.close();
