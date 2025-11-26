@@ -292,7 +292,7 @@ app.post('/gerar', async (req, res) => {
         </div>
       `,
       footerTemplate: '<div style="font-size: 10px;"></div>',
-      margin: { top: '100px', right: '60px', bottom: '40px', left: '60px' }
+      margin: { top: '120px', right: '60px', bottom: '40px', left: '60px' }
     });
     
     await browser.close();
